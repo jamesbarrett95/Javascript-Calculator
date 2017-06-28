@@ -1,0 +1,52 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d3d3d3;
+}
+
+h2 {
+  text-align: center;
+}
+
+.calculator {
+  height: 500px;
+  width: 410px;
+  background: lightblue;
+}
+
+.results-area {
+  text-align: right;
+  font-size: 55px;
+  background: grey;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: green;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.grow {
+  flex-grow: 1;
+}
