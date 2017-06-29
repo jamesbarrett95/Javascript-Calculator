@@ -36,7 +36,10 @@ h2 {
   justify-content: center;
 }
 
-.button {
+.button,
+.button-equals,
+.button-clear-entry,
+.button-clear-all {
   height: 60px;
   width: 60px;
   display: flex;
