@@ -1,6 +1,7 @@
 const resultsArea = document.querySelector('.results-area')
 const buttons = document.querySelectorAll('.button')
 const equals = document.querySelector('.button-equals')
+const percent = document.querySelector('.button-percent')
 const clearAllButton = document.querySelector('.button-clear-all')
 const clearEntryButton = document.querySelector('.button-clear-entry')
 let chainedNumbers = []
@@ -16,6 +17,19 @@ function clearAll () {
 }
 
 function clearEntry () {
+  const reversedTemp = chainedNumbers.reverse()
+  let previousRemoved
+  for (var i = 0; i < reversedTemp.length; i++) {
+    if (reversedTemp[i] === '/' || reversedTemp[i] === '*' || reversedTemp[i] === '+' || reversedTemp[i] === '-') {
+      previousRemoved = reversedTemp.splice(reversedTemp.indexOf(reversedTemp[i]) + 1, reversedTemp.length)
+      break
+    }
+  }
+  chainedNumbers = previousRemoved.reverse()
+  displayNumbers(chainedNumbers)
+}
+
+function evaluatePercentage () {
 
 }
 
@@ -40,5 +54,6 @@ function chainNumbers () {
 
 buttons.forEach(button => button.addEventListener('click', chainNumbers))
 equals.addEventListener('click', evaluateNumbers)
+percent.addEventListener('click', evaluatePercentage)
 clearAllButton.addEventListener('click', clearAll)
 clearEntryButton.addEventListener('click', clearEntry)
